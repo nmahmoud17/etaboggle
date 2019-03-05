@@ -74,8 +74,8 @@
 
     </div>
     <div id="word-submit">
-        <form><span><strong>Current Word:</strong>
-            <input type="text"/>
+        <form action="/game" method="get"><span><strong>Current Word:</strong>
+            <input name="playerInput" type="text" placeholder="Enter words here..." required="required" autocomplete="off"/>
         </span></form>
         <button type="button">Submit Word</button>
     </div>
