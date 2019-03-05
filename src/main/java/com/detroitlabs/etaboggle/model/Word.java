@@ -9,6 +9,11 @@ public class Word {
         this.points = name.length();
     }
 
+    public Word(String name) {
+        this.name = name;
+        this.points = name.length();
+    }
+
     public String getName() {
         return name;
     }

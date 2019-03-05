@@ -86,8 +86,8 @@
         </tr>
         <div th:each="word : ${enteredWords}">
         <tr>
-            <td th:text="@{${word}}"></td>
-            <td>11</td>
+            <td th:text="@{${word.name}}"></td>
+            <td th:text="@{${word.points}}"></td>
         </tr>
         </div>
         <tr id="footer">
