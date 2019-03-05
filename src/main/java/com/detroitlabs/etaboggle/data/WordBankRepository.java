@@ -1,9 +1,12 @@
 package com.detroitlabs.etaboggle.data;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class WordBankRepository {
 
     public static final List<String> ALL_WORDS = Arrays.asList(
@@ -139,5 +142,14 @@ public class WordBankRepository {
 
 
     );
+
+    public List<String> compareUserInput(String userInput) {
+        List<String> correctUserWords = new ArrayList<>();
+        if (ALL_WORDS.contains(userInput)){
+            correctUserWords.add(userInput);
+        }
+        return correctUserWords;
+
+    }
 
 }
