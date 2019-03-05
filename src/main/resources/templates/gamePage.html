@@ -84,10 +84,12 @@
             <th>Word </th>
             <th>Score</th>
         </tr>
+        <div th:each="word : ${enteredWords}">
         <tr>
-            <td>congruent</td>
+            <td th:text="@{${word}}"></td>
             <td>11</td>
         </tr>
+        </div>
         <tr>
             <td>urgent</td>
             <td>3</td>

@@ -143,10 +143,13 @@ public class WordBankRepository {
 
     );
 
+
     public List<String> compareUserInput(String userInput) {
         List<String> correctUserWords = new ArrayList<>();
-        if (ALL_WORDS.contains(userInput)){
-            correctUserWords.add(userInput);
+        for (String word: ALL_WORDS) {
+            if (word.equalsIgnoreCase(userInput)) {
+                correctUserWords.add(userInput);
+            }
         }
         return correctUserWords;
 
