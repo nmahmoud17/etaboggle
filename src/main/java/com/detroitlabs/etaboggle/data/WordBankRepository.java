@@ -146,7 +146,7 @@ public class WordBankRepository {
 
     public List<String> compareUserInput(String userInput) {
         for (String word: ALL_WORDS) {
-            if (word.equalsIgnoreCase(userInput)) {
+            if (word.equalsIgnoreCase(userInput) && !correctUserWords.contains(userInput)) {
                 correctUserWords.add(userInput);
             }
         }
