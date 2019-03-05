@@ -28,7 +28,7 @@ public class GameController {
         return "gamePage";
     }
 
-    @PostMapping(value = "/game")
+    @RequestMapping(value = "/game", method = GET, params = "playerInput")
     public String playGame(ModelMap modelMap, @RequestParam("playerInput") String playerWord){
         List<String> enteredWords = wordBankRepository.compareUserInput(playerWord);
         modelMap.put("enteredWords", enteredWords);

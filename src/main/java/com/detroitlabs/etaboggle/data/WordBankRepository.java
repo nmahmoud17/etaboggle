@@ -9,6 +9,8 @@ import java.util.List;
 @Component
 public class WordBankRepository {
 
+    private List<String> correctUserWords = new ArrayList<>();
+
     public static final List<String> ALL_WORDS = Arrays.asList(
             new String("apt"),
             new String("del"),
@@ -140,20 +142,14 @@ public class WordBankRepository {
             new String("uta"),
             new String("utile")
 
-
     );
 
-
     public List<String> compareUserInput(String userInput) {
-        List<String> correctUserWords = new ArrayList<>();
         for (String word: ALL_WORDS) {
             if (word.equalsIgnoreCase(userInput)) {
                 correctUserWords.add(userInput);
             }
         }
         return correctUserWords;
-
     }
-
-
 }
