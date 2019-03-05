@@ -11,6 +11,7 @@ import java.util.List;
 public class WordBankRepository {
 
     private List<Word> correctUserWords = new ArrayList<>();
+    private int sum = 0;
 
     public static final List<Word> ALL_WORDS = Arrays.asList(
             new Word ("apt"),
@@ -152,5 +153,12 @@ public class WordBankRepository {
             }
         }
         return correctUserWords;
+    }
+
+    public int sumPlayerScore(){
+        for(Word word: correctUserWords){
+            sum += word.getPoints();
+        }
+        return sum;
     }
 }

@@ -34,6 +34,9 @@ public class GameController {
         Word word = new Word(playerWord);
         List<Word> enteredWords = wordBankRepository.compareUserInput(word);
         modelMap.put("enteredWords", enteredWords);
+
+        int sum = wordBankRepository.sumPlayerScore();
+        modelMap.put("sum", sum);
         return "gamePage";
     }
 
