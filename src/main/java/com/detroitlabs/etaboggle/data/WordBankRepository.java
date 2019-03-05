@@ -1,10 +1,15 @@
 package com.detroitlabs.etaboggle.data;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class WordBankRepository {
+
+    private List<String> correctUserWords = new ArrayList<>();
 
     public static final List<String> ALL_WORDS = Arrays.asList(
             new String("apt"),
@@ -137,7 +142,14 @@ public class WordBankRepository {
             new String("uta"),
             new String("utile")
 
-
     );
 
+    public List<String> compareUserInput(String userInput) {
+        for (String word: ALL_WORDS) {
+            if (word.equalsIgnoreCase(userInput)) {
+                correctUserWords.add(userInput);
+            }
+        }
+        return correctUserWords;
+    }
 }

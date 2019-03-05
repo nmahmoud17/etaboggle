@@ -74,7 +74,9 @@
 
     </div>
     <div id="word-submit">
-        <span><strong>Current Word:</strong> ABC </span>
+        <form action="/game" method="get"><span><strong>Current Word:</strong>
+            <input name="playerInput" type="text" placeholder="Enter words here..." required="required" autocomplete="off"/>
+        </span></form>
         <button type="button">Submit Word</button>
     </div>
     <table id="score-table">
@@ -82,10 +84,12 @@
             <th>Word </th>
             <th>Score</th>
         </tr>
+        <div th:each="word : ${enteredWords}">
         <tr>
-            <td>congruent</td>
+            <td th:text="@{${word}}"></td>
             <td>11</td>
         </tr>
+        </div>
         <tr>
             <td>urgent</td>
             <td>3</td>
