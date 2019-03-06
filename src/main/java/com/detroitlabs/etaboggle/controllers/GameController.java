@@ -40,6 +40,11 @@ public class GameController {
         return "gamePage";
     }
 
+    @RequestMapping("/time")
+    public String timer() {
+        return "timetest";
+    }
+
 
 
 

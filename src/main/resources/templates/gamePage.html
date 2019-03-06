@@ -5,12 +5,20 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" th:href="@{/app.css}" />
     <title>Boggle Game</title>
 </head>
 <body>
+
 <div id="boggle-container">
     <img src="/images/logo.jpg" class="logo" />
+    <div id="timeContainer">
+        <p>Session will end in <span class="js-timeout">2:00</span>.</p>
+
+        <button id="js-startTimer">Start Countdown</button>
+        <button id="js-resetTimer">Stop &amp; Reset</button>
+    </div>
     <div id="board">
         <div class="row">
             <div class="boggle">
@@ -96,5 +104,6 @@
         </tr>
     </table>
 </div>
+<script src="index.js"></script>
 </body>
 </html>
