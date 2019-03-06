@@ -14,6 +14,21 @@ public class Word {
         this.points = name.length();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+
+        if (!(obj instanceof Word)) {
+            return false;
+        }
+
+        Word word = (Word) obj;
+
+        return word.name.equalsIgnoreCase(this.name);
+    }
+
     public String getName() {
         return name;
     }

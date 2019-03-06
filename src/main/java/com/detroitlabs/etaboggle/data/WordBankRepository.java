@@ -11,7 +11,7 @@ import java.util.List;
 public class WordBankRepository {
 
     private List<Word> correctUserWords = new ArrayList<>();
-    private int sum = 0;
+//    private int sum = 0;
 
     public static final List<Word> ALL_WORDS = Arrays.asList(
             new Word ("apt"),
@@ -147,15 +147,19 @@ public class WordBankRepository {
     );
 
     public List<Word> compareUserInput(Word userInput) {
-        for (Word word: ALL_WORDS) {
-            if (userInput.getName().equalsIgnoreCase(word.getName()) && !correctUserWords.contains(userInput.getName())) {
-                correctUserWords.add(userInput);
+        if (!correctUserWords.contains(userInput)){
+            for (Word word: ALL_WORDS) {
+                if (userInput.getName().equalsIgnoreCase(word.getName())) {
+                    correctUserWords.add(userInput);
+                }
             }
         }
+
         return correctUserWords;
     }
 
     public int sumPlayerScore(){
+        int sum = 0;
         for(Word word: correctUserWords){
             sum += word.getPoints();
         }
