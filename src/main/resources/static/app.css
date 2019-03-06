@@ -76,3 +76,8 @@ body {
 #score-table tr#footer td {
     background-color: #ACCEEC;
 }
+
+#timeContainer {
+    align-content: center;
+    margin: auto;
+}
