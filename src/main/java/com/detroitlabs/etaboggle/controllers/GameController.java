@@ -21,7 +21,7 @@ public class GameController {
 
     @RequestMapping("/")
     public String homePageGreeting(){
-        return "home";
+        return "gameHomePage";
     }
 
     @RequestMapping(value = "/game", method = GET)
@@ -44,6 +44,8 @@ public class GameController {
     public String timer() {
         return "timetest";
     }
+
+
 
 
 

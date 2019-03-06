@@ -81,3 +81,27 @@ body {
     align-content: center;
     margin: auto;
 }
+
+#ruleContainer {
+    text-align: center;
+    border: 5px solid #FFCA08;
+    background-color: #398BD4;
+    padding-bottom: 10px;
+}
+
+#ruleContainer h3 {
+    text-align: left;
+}
+
+#innerRuleContainer {
+    background-color: white;
+    box-shadow: -4px 2px 8px 1px rgba(0,0,0,0.69);
+    margin: 20px;
+    padding: 10px;
+}
+
+
+#beginGame {
+    margin: auto;
+    padding-top: 15px;
+}
