@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/app.css}" />
+    <title>Boggle Game</title>
+</head>
+<body>
+<div id="boggle-container">
+    <img src="/images/logo.jpg" class="logo" />
+    <div id="board">
+        <div class="row">
+            <div class="boggle">
+                <span>D</span>
+            </div>
+            <div class="boggle">
+                <span>L</span>
+            </div>
+            <div class="boggle">
+                <span>P</span>
+            </div>
+            <div class="boggle">
+                <span>A</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="boggle">
+                <span>E</span>
+            </div>
+            <div class="boggle">
+                <span>I</span>
+            </div>
+            <div class="boggle">
+                <span>T</span>
+            </div>
+            <div class="boggle">
+                <span>G</span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="boggle">
+                <span>O</span>
+            </div>
+            <div class="boggle">
+                <span>N</span>
+            </div>
+            <div class="boggle">
+                <span>U</span>
+            </div>
+            <div class="boggle">
+                <span>N</span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="boggle">
+                <span>O</span>
+            </div>
+            <div class="boggle">
+                <span>Q</span>
+            </div>
+            <div class="boggle">
+                <span>E</span>
+            </div>
+            <div class="boggle">
+                <span>U</span>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="word-submit">
+        <form action="/game" method="get"><span><strong>Current Word:</strong>
+            <input name="playerInput" type="text" placeholder="Enter words here..." required="required" autocomplete="off"/>
+        </span></form>
+        <!--<button type="button">Submit Word</button>-->
+    </div>
+    <table id="score-table">
+        <tr>
+            <th>Word </th>
+            <th>Score</th>
+        </tr>
+        <div th:each="word : ${enteredWords}">
+        <tr>
+            <td th:text="@{${word.name}}"></td>
+            <td th:text="@{${word.points}}"></td>
+        </tr>
+        </div>
+        <tr id="footer">
+            <td>Total </td>
+            <td th:text="@{sum}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
