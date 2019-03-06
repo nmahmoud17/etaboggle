@@ -1,6 +1,7 @@
 package com.detroitlabs.etaboggle.controllers;
 
 import com.detroitlabs.etaboggle.data.WordBankRepository;
+import com.detroitlabs.etaboggle.model.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,8 +31,12 @@ public class GameController {
 
     @RequestMapping(value = "/game", method = GET, params = "playerInput")
     public String playGame(ModelMap modelMap, @RequestParam("playerInput") String playerWord){
-        List<String> enteredWords = wordBankRepository.compareUserInput(playerWord);
+        Word word = new Word(playerWord);
+        List<Word> enteredWords = wordBankRepository.compareUserInput(word);
         modelMap.put("enteredWords", enteredWords);
+
+        int sum = wordBankRepository.sumPlayerScore();
+        modelMap.put("sum", sum);
         return "gamePage";
     }
 
