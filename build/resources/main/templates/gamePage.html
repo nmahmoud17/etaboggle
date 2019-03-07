@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
     <link rel="stylesheet" th:href="@{/app.css}" />
     <title>Boggle Game</title>
 </head>
@@ -19,63 +20,67 @@
         <button id="js-startTimer">Start Countdown</button>
         <button id="js-resetTimer">Stop &amp; Reset</button>
     </div>
-    <div id="board">
-        <div class="row">
-            <div class="boggle">
-                <span>D</span>
+    <div id="board" class="allButtons">
+        <div class="row" id="text" >
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="D" class="button"/></span>
+
             </div>
-            <div class="boggle">
-                <span>L</span>
+
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="L" class = "button2"/></span>
             </div>
-            <div class="boggle">
-                <span>P</span>
+
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="P" class = "button3"/></span>
             </div>
-            <div class="boggle">
-                <span>A</span>
+
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="A" class = "button4"/></span>
             </div>
         </div>
+
         <div class="row">
-            <div class="boggle">
-                <span>E</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="E" class = "button5"/></span>
             </div>
-            <div class="boggle">
-                <span>I</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="I" class = "button6"/></span>
             </div>
-            <div class="boggle">
-                <span>T</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="T" class = "button7"/></span>
             </div>
-            <div class="boggle">
-                <span>G</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="G" class = "button8"/></span>
             </div>
 
         </div>
         <div class="row">
-            <div class="boggle">
-                <span>O</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="O" class = "button9"/></span>
             </div>
-            <div class="boggle">
-                <span>N</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="N" class = "button10"/></span>
             </div>
-            <div class="boggle">
-                <span>U</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="U" class = "button11"/></span>
             </div>
-            <div class="boggle">
-                <span>N</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="N" class = "button12"/></span>
             </div>
-
         </div>
         <div class="row">
-            <div class="boggle">
-                <span>O</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="O" class = "button13"/></span>
             </div>
-            <div class="boggle">
-                <span>Q</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="Q" class = "button14"/></span>
             </div>
-            <div class="boggle">
-                <span>E</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="E" class = "button15"/></span>
             </div>
-            <div class="boggle">
-                <span>U</span>
+            <div class="boggle" onclick="myFunction(this)">
+                <span><input type = "button" value="U" class = "button16"/></span>
             </div>
 
         </div>
@@ -83,7 +88,7 @@
     </div>
     <div id="word-submit">
         <form action="/game" method="get"><span><strong>Current Word:</strong>
-            <input name="playerInput" type="text" placeholder="Enter words here..." required="required" autocomplete="off"/>
+            <input class="form2" name="playerInput" type="text" placeholder="Enter words here..." required="required" autocomplete="off"/>
         </span></form>
         <!--<button type="button">Submit Word</button>-->
     </div>
@@ -100,10 +105,15 @@
         </div>
         <tr id="footer">
             <td>Total </td>
-            <td th:text="@{sum}"></td>
+            <td th:text="@{${sum}}"></td>
         </tr>
     </table>
 </div>
 <script src="index.js"></script>
+<script>
+    function myFunction(divObj) {
+        divObj.style.background.toggle="#8fce6f";
+    }
+</script>
 </body>
 </html>
